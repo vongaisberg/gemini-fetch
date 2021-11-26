@@ -14,6 +14,7 @@ module.exports = function makeGemini (opts = {}) {
   const finalOpts = { ...DEFAULT_OPTS, opts }
   return makeFetch(({ url, referrer }, sendResponse) => {
     const toRequest = new URL(url, referrer)
+    console.log(toRequest);
 
     request(toRequest.href, finalOpts, (err, res) => {
       if (err) {
